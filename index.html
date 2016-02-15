@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6 lazy " lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 lazy " lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 lazy " lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 lazy " lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!--[if lt IE 9]><script src="js/lib/html5shiv/dist/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><script src="js/lib/selectivizr/selectivizr.js"></script><![endif]-->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/lib/requirejs/require.js"></script>
+    <script>
+        //Load common code that includes config, then load the app
+        //logic for this page. Do the requirejs calls here instead of
+        //a separate file so after a build there are only 2 HTTP
+        //requests instead of three.
+        requirejs(['./js/common'], function (common) {
+            //js/common sets the baseUrl to be js/ so
+            //can just ask for 'app/main1' here instead
+            //of 'js/app/main1'
+            requirejs(['app/main1']);
+        });
+    </script>
+</head>
+<body>
+    <h1>My Sample Project</h1>
+
+    <div class='js-pagination-ex'></div>
+</body>
+</html>
