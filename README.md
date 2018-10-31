@@ -1,4 +1,4 @@
-# test
+# test  .umirc.js proxy working
 
 
 ```
