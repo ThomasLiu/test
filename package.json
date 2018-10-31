@@ -1,21 +1,43 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "test",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export NODE_ENV=development && ./node_modules/.bin/supervisor ./app"
+    "start": "umi dev",
+    "build": "umi build",
+    "test": "umi test",
+    "lint": "eslint --ext .js src mock tests",
+    "precommit": "lint-staged"
   },
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "umi": "^2.1.2",
+    "umi-plugin-react": "^1.1.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
-    "jade": "^1.11.0",
-    "koa": "^2.0.0",
-    "koa-compress": "^1.0.9",
-    "koa-convert": "^1.2.0",
-    "koa-route": "^2.4.2",
-    "koa-static": "^2.0.0",
-    "koa-views": "^4.1.0"
+    "antd": "^3.10.3",
+    "dva": "^2.4.1",
+    "eslint-plugin-compat": "^2.6.2",
+    "hash.js": "^1.1.5",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "qs": "^6.5.2",
+    "react": "^16.6.0",
+    "react-intl-universal": "^1.14.3"
   }
 }
